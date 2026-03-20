@@ -98,4 +98,3 @@ To thoroughly evaluate the pipeline according to standard RAG capabilities, I cr
 | **9. Who is the CEO of Indecimal?**                                      | **Information void test**            | **Pass** (Refused to answer)                               |
 | 10. _How many critical checkpoints are in the quality assurance system?_ | **Extract exact number**             | **Pass** (Successfully returns 445+)                       |
 
-**Future Considerations (Self-Correction):** The system proved robust against hallucination parameters when the answer wasn't present; however, strict prompt instruction adherence originally dropped heavily when asked to recall past conversational intent ("What was my last question?"). I solved this natively in LangChain by engineering a secondary context layer for memory injection, allowing the bot to interact with the user via `Previous Chat History` variables without losing factual domain mapping.
