@@ -57,16 +57,16 @@
     },
     {
         "question": "Who is the CEO of Indecimal?",
-        "local_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "local_answer": "I cannot answer this question because the information is not present in the provided documents.",
         "local_time_seconds": 1.450700283050537,
-        "cloud_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "cloud_answer": "I cannot answer this question because the information is not present in the provided documents.",
         "cloud_time_seconds": 1.5298740863800049
     },
     {
         "question": "How many critical checkpoints are in the quality assurance system?",
-        "local_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "local_answer": "The quality assurance system covers 445+ critical checkpoints across the construction lifecycle.",
         "local_time_seconds": 1.6116418838500977,
-        "cloud_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "cloud_answer": "The system implements a quality assurance framework that covers **445+ critical checkpoints** across the construction lifecycle.",
         "cloud_time_seconds": 1.5005478858947754
     }
 ]
