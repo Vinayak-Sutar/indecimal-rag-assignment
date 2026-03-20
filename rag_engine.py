@@ -109,7 +109,14 @@ def generate_answer(prompt, vectorstore, llm, st_messages, top_k=3):
 
     # Retrieve docs for UI transparency, and run generation
     source_documents = retriever.invoke(prompt)
-    answer = rag_chain.invoke(prompt)
+    try:
+        answer = rag_chain.invoke(prompt)
+    except Exception as e:
+        error_msg = str(e).lower()
+        if "429" in error_msg or "rate limit" in error_msg:
+            answer = "Looks like the free rate limit has been reached. Please try again later."
+        else:
+            answer = f"An unexpected error occurred: {str(e)}"
 
     return answer, source_documents
 
