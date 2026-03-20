@@ -52,7 +52,7 @@
         "question": "Can I build a 50-story commercial skyscraper with Indecimal?",
         "local_answer": "I cannotanswer this question because the information is not present in the provided documents.",
         "local_time_seconds": 1.000976324081421,
-        "cloud_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "cloud_answer": "I cannot answer this question because the information is not present in the provided documents.",
         "cloud_time_seconds": 1.8900046348571777
     },
     {
