@@ -1,6 +1,6 @@
 # Construction Marketplace AI Assistant (Mini-RAG)
 
-*Note: This repository was created as a submission for the Indecimal RAG Assignment.*
+_Note: This repository was created as a submission for the Indecimal RAG Assignment._
 
 This repository contains a Retrieval-Augmented Generation (RAG) pipeline built for **INDECIMAL**, a construction marketplace. It acts as an internal knowledge base assistant, allowing users to ask questions about company policies and specifications. To ensure reliability, the pipeline restricts answers exclusively to the provided internal documentation, strongly preventing AI hallucinations.
 
@@ -10,7 +10,6 @@ This repository contains a Retrieval-Augmented Generation (RAG) pipeline built f
 
 - **Python 3.10+** (Tested on Python 3.10)
 - **[Ollama](https://ollama.com/)** (Optional, only required if you want to run offline local inference)
-- An **Nvidia GPU** is highly recommended for running local models, though it is not strictly required.
 
 ### Installation Instructions
 
@@ -85,16 +84,15 @@ To thoroughly evaluate the pipeline according to standard RAG capabilities, I cr
 
 ### 3. Core 10-Question Evaluation Matrix
 
-| Test Question                                                            | Expected Outcome                     | System Result (Pass/Fail)                                  |
-| ------------------------------------------------------------------------ | ------------------------------------ | ---------------------------------------------------------- |
-| 1. _What is Indecimal's one-line summary?_                               | Pull 1-line summary                  | **Pass**                                                   |
-| 2. _Are the package pricing rates inclusive of GST?_                     | Direct yes/no extraction             | **Pass**                                                   |
-| 3. _What is the Escrow-Based Payment Model?_                             | Summarize definitions                | **Pass**                                                   |
-| 4. _What kind of home construction does Indecimal support?_              | Aggregate capabilities               | **Pass**                                                   |
-| **5. Who built the Eiffel Tower?**                                       | **Guardrail (Force zero-knowledge)** | **Pass** (Refused to answer)                               |
-| **6. What are the 3 tiers of protection policies?**                      | **Guardrail (Missing Info Test)**    | **Pass** (Both models refused with temperature=0.3)                    |
-| 7. _How does the system ensure quality?_                                 | Map bullet points                    | **Pass**                                                   |
-| **8. Can I build a 50-story commercial skyscraper?**                     | **Domain restriction**               | **Pass** (Refused to answer)                               |
-| **9. Who is the CEO of Indecimal?**                                      | **Information void test**            | **Pass** (Refused to answer)                               |
-| 10. _How many critical checkpoints are in the quality assurance system?_ | **Extract exact number**             | **Pass** (Successfully returns 445+)                       |
-
+| Test Question                                                            | Expected Outcome                     | System Result (Pass/Fail)                           |
+| ------------------------------------------------------------------------ | ------------------------------------ | --------------------------------------------------- |
+| 1. _What is Indecimal's one-line summary?_                               | Pull 1-line summary                  | **Pass**                                            |
+| 2. _Are the package pricing rates inclusive of GST?_                     | Direct yes/no extraction             | **Pass**                                            |
+| 3. _What is the Escrow-Based Payment Model?_                             | Summarize definitions                | **Pass**                                            |
+| 4. _What kind of home construction does Indecimal support?_              | Aggregate capabilities               | **Pass**                                            |
+| **5. Who built the Eiffel Tower?**                                       | **Guardrail (Force zero-knowledge)** | **Pass** (Refused to answer)                        |
+| **6. What are the 3 tiers of protection policies?**                      | **Guardrail (Missing Info Test)**    | **Pass** (Both models refused with temperature=0.3) |
+| 7. _How does the system ensure quality?_                                 | Map bullet points                    | **Pass**                                            |
+| **8. Can I build a 50-story commercial skyscraper?**                     | **Domain restriction**               | **Pass** (Refused to answer)                        |
+| **9. Who is the CEO of Indecimal?**                                      | **Information void test**            | **Pass** (Refused to answer)                        |
+| 10. _How many critical checkpoints are in the quality assurance system?_ | **Extract exact number**             | **Pass** (Successfully returns 445+)                |
