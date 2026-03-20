@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+secret.txt
+.env
+temp_docs/
+github_deploy/
+.DS_Store

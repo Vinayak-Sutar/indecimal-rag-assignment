@@ -1,0 +1,72 @@
+[
+    {
+        "question": "What is Indecimal's one-line summary?",
+        "local_answer": "Indecimal provides end-to-endhome construction support with transparent pricing, quality assurance, and structured project tracking from inquiry to handover.",
+        "local_time_seconds": 1.5633869171142578,
+        "cloud_answer": "Indecimal providesend-to-end home construction support with transparent pricing, quality assurance, and structured project tracking from inquiry to handover.",
+        "cloud_time_seconds": 1.051640510559082
+    },
+    {
+        "question": "Are the package pricing rates inclusive of GST?",
+        "local_answer": "Yes, the package pricing rates are inclusiveof GST.",
+        "local_time_seconds": 1.30476975440979,
+        "cloud_answer": "Yes. The package pricing rates arelisted as inclusive of GST.",
+        "cloud_time_seconds": 0.9479331970214844
+    },
+    {
+        "question": "What is the Escrow-Based Payment Model?",
+        "local_answer": "Itis a model where customer payments are made to an escrow account, a project manager verifies stage completion, and funds are disbursed to the construction partner after verification.",
+        "local_time_seconds": 1.354217529296875,
+        "cloud_answer": "The Escrow\u2011BasedPayment Model is a system in which the customer\u2019s payments are placed in an escrow account. A project manager reviews each construction stage and confirms its completion, after which the funds are released to the construction partner. This approach is intended to reduce financial risk for customers and improve transparency and trust.",
+        "cloud_time_seconds": 1.8091909885406494
+    },
+    {
+        "question": "What kind of home construction does Indecimal support?",
+        "local_answer": "Indecimal supports end\u2011to\u2011end home construction, covering the entire journey from inquiry to handover, including interior customization, transparent pricing, quality assurance, and post\u2011handover maintenance.",
+        "local_time_seconds": 1.9353766441345215,
+        "cloud_answer": "Indecimal supports end\u2011to\u2011end home construction, from inquiry to handover.",
+        "cloud_time_seconds": 2.217498779296875
+    },
+    {
+        "question": "Who built the Eiffel Tower?",
+        "local_answer": "I cannot answer this questionbecause the information is not present in the provided documents.",
+        "local_time_seconds": 0.9792251586914062,
+        "cloud_answer": "I cannot answerthis question because the information is not present in the provided documents.",
+        "cloud_time_seconds": 1.0479028224945068
+    },
+    {
+        "question": "What are the 3 tiers of protection policies?",
+        "local_answer": "Icannot answer this question because the information is not present in the provided documents.",
+        "local_time_seconds": 0.9696700572967529,
+        "cloud_answer": "I cannot answer thisquestion because the information is not present in the provided documents.",
+        "cloud_time_seconds": 1.076390266418457
+    },
+    {
+        "question": "How does the system ensure quality?",
+        "local_answer": "The system ensures qualityby using a dedicated Quality Assurance system that applies\u202f445+ checkpoints\u202facross the entire construction lifecycle. Each construction phase is scored and audited for\u202fstructural integrity, safety compliance, and execution accuracy, and progress\u2011and\u2011quality metrics are made visible to the customer through an online dashboard. This strict quality control is applied at every stage of the project.",
+        "local_time_seconds": 2.2250571250915527,
+        "cloud_answer": "The system ensures qualitythrough a dedicated Quality Assurance framework that applies\u202f445+ critical checkpoints across every construction phase. Each phase is scored and audited for\u202fstructural integrity, safety compliance, and execution accuracy, and progress\u2011and\u2011quality metrics are made visible to the customer via an online dashboard. This rigorous, stage\u2011by\u2011stage oversight is the core mechanism by which quality is maintained.",
+        "cloud_time_seconds": 1.551241159439087
+    },
+    {
+        "question": "Can I build a 50-story commercial skyscraper with Indecimal?",
+        "local_answer": "I cannotanswer this question because the information is not present in the provided documents.",
+        "local_time_seconds": 1.000976324081421,
+        "cloud_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "cloud_time_seconds": 1.8900046348571777
+    },
+    {
+        "question": "Who is the CEO of Indecimal?",
+        "local_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "local_time_seconds": 1.450700283050537,
+        "cloud_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "cloud_time_seconds": 1.5298740863800049
+    },
+    {
+        "question": "How many critical checkpoints are in the quality assurance system?",
+        "local_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "local_time_seconds": 1.6116418838500977,
+        "cloud_answer": "ERROR: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773985980000'}, 'provider_name': None}}, 'user_id': 'user_3BBNsU8XCK0T0nHWB9lgVwiS5Us'}",
+        "cloud_time_seconds": 1.5005478858947754
+    }
+]
