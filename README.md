@@ -1,5 +1,7 @@
 # Construction Marketplace AI Assistant (Mini-RAG)
 
+*Note: This repository was created as a submission for the Indecimal RAG Assignment.*
+
 This repository contains a Retrieval-Augmented Generation (RAG) pipeline built for **INDECIMAL**, a construction marketplace. It acts as an internal knowledge base assistant, allowing users to ask questions about company policies and specifications. To ensure reliability, the pipeline restricts answers exclusively to the provided internal documentation, strongly preventing AI hallucinations.
 
 ## 1. Setup & Local Installation
@@ -27,7 +29,7 @@ This repository contains a Retrieval-Augmented Generation (RAG) pipeline built f
    ollama pull mistral
    ```
 
-### Connecting to Cloud OpenRouter (Fallback)
+### Connecting to Cloud OpenRouter
 
 To use the high-speed cloud fallback, create a `.env` file in the root directory and add your OpenRouter API key:
 
@@ -70,28 +72,30 @@ To thoroughly evaluate the pipeline according to standard RAG capabilities, I cr
 > **To reproduce the evaluation:** Run `python run_evaluation.py`. The results are saved to `eval_results.json`.
 
 ### 1. Comparison: Local vs. OpenRouter Model
-* **Answer Quality:** The OpenRouter model (30B) consistently formatted outputs with deeper clarity, using markdown and isolated bullet points. The Local model (7B) yielded functionally accurate answers but with slightly simpler, more concise structures.
-* **Latency:** Local inference running natively on the RTX 3060 averaged **~1.5 - 2.8 seconds** per response. The OpenRouter API was faster, averaging **~1.0 - 1.5 seconds** per response.
-* **Groundedness to Retrieved Context:** Both models successfully anchored their responses to the RAG context. By maintaining a strict fallback prompt and a low temperature (`0.3`), both models consistently refused to construct answers if the text was missing from the supplied index.
 
-### 2. Quality Analysis 
-* **Relevance of retrieved chunks:** The local HuggingFace embeddings (`all-MiniLM-L6-v2`) inside the FAISS vector store proved highly relevant. For every document-grounded question (e.g., about GST, Escrow), the nearest-neighbor search consistently retrieved the precise chunk containing the factual answer within the `top_k=3` results.
-* **Presence of hallucinations or unsupported claims:** Evaluated via out-of-domain questions ("Who built the Eiffel Tower?", "Who is the CEO?") and missing-information questions ("3 tiers of protection"). Hallucinations were successfully reduced to **0%**. In all test cases where context was absent, the pipeline correctly enforced the hardcoded fallback message: *"I cannot answer this question... "* 
-* **Completeness and clarity of generated answers:** For in-domain questions, the generated answers completely and accurately resolved the queries without omitting critical definitions (such as correctly returning the "445+ checkpoints" statistic from the quality manual).
+- **Answer Quality:** The OpenRouter model (30B) consistently formatted outputs with deeper clarity, using markdown and isolated bullet points. The Local model (7B) yielded functionally accurate answers but with slightly simpler, more concise structures.
+- **Latency:** Local inference running natively on the RTX 3060 averaged **~1.5 - 2.8 seconds** per response. The OpenRouter API was faster, averaging **~1.0 - 1.5 seconds** per response.
+- **Groundedness to Retrieved Context:** Both models successfully anchored their responses to the RAG context. By maintaining a strict fallback prompt and a low temperature (`0.3`), both models consistently refused to construct answers if the text was missing from the supplied index.
+
+### 2. Quality Analysis
+
+- **Relevance of retrieved chunks:** The local HuggingFace embeddings (`all-MiniLM-L6-v2`) inside the FAISS vector store proved highly relevant. For every document-grounded question (e.g., about GST, Escrow), the nearest-neighbor search consistently retrieved the precise chunk containing the factual answer within the `top_k=3` results.
+- **Presence of hallucinations or unsupported claims:** Evaluated via out-of-domain questions ("Who built the Eiffel Tower?", "Who is the CEO?") and missing-information questions ("3 tiers of protection"). Hallucinations were successfully reduced to **0%**. In all test cases where context was absent, the pipeline correctly enforced the hardcoded fallback message: _"I cannot answer this question... "_
+- **Completeness and clarity of generated answers:** For in-domain questions, the generated answers completely and accurately resolved the queries without omitting critical definitions (such as correctly returning the "445+ checkpoints" statistic from the quality manual).
 
 ### 3. Core 10-Question Evaluation Matrix
 
-| Test Question                                               | Expected Outcome                     | System Result (Pass/Fail)                                          |
-| ----------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------ |
-| 1. _What is Indecimal's one-line summary?_                  | Pull 1-line summary                  | **Pass**                                                           |
-| 2. _Are the package pricing rates inclusive of GST?_        | Direct yes/no extraction             | **Pass**                                                           |
-| 3. _What is the Escrow-Based Payment Model?_                | Summarize definitions                | **Pass**                                                           |
-| 4. _What kind of home construction does Indecimal support?_ | Aggregate capabilities               | **Pass**                                                           |
-| **5. Who built the Eiffel Tower?**                          | **Guardrail (Force zero-knowledge)** | **Pass** (Refused to answer)                                       |
-| **6. What are the 3 tiers of protection policies?**         | **Guardrail (Missing Info Test)**    | **Cloud Fail / Local Pass** (Cloud Hallucinated initially)         |
-| 7. _How does the system ensure quality?_                    | Map bullet points                    | **Pass**                                                           |
-| **8. Can I build a 50-story commercial skyscraper?**        | **Domain restriction**               | **Pass** (Refused to answer)                                       |
-| **9. Who is the CEO of Indecimal?**                         | **Information void test**            | **Pass** (Refused to answer)                                       |
-| 10. _How many critical checkpoints are in the quality assurance system?_ | **Extract exact number** | **Pass** (Successfully returns 445+)                               |
+| Test Question                                                            | Expected Outcome                     | System Result (Pass/Fail)                                  |
+| ------------------------------------------------------------------------ | ------------------------------------ | ---------------------------------------------------------- |
+| 1. _What is Indecimal's one-line summary?_                               | Pull 1-line summary                  | **Pass**                                                   |
+| 2. _Are the package pricing rates inclusive of GST?_                     | Direct yes/no extraction             | **Pass**                                                   |
+| 3. _What is the Escrow-Based Payment Model?_                             | Summarize definitions                | **Pass**                                                   |
+| 4. _What kind of home construction does Indecimal support?_              | Aggregate capabilities               | **Pass**                                                   |
+| **5. Who built the Eiffel Tower?**                                       | **Guardrail (Force zero-knowledge)** | **Pass** (Refused to answer)                               |
+| **6. What are the 3 tiers of protection policies?**                      | **Guardrail (Missing Info Test)**    | **Pass** (Both models refused with temperature=0.3)                    |
+| 7. _How does the system ensure quality?_                                 | Map bullet points                    | **Pass**                                                   |
+| **8. Can I build a 50-story commercial skyscraper?**                     | **Domain restriction**               | **Pass** (Refused to answer)                               |
+| **9. Who is the CEO of Indecimal?**                                      | **Information void test**            | **Pass** (Refused to answer)                               |
+| 10. _How many critical checkpoints are in the quality assurance system?_ | **Extract exact number**             | **Pass** (Successfully returns 445+)                       |
 
 **Future Considerations (Self-Correction):** The system proved robust against hallucination parameters when the answer wasn't present; however, strict prompt instruction adherence originally dropped heavily when asked to recall past conversational intent ("What was my last question?"). I solved this natively in LangChain by engineering a secondary context layer for memory injection, allowing the bot to interact with the user via `Previous Chat History` variables without losing factual domain mapping.
